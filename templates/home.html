@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="display-4 text-center mb-4">Добро пожаловать в Личный дневник!</h2>
+    <p class="lead text-center">Здесь вы можете вести записи, отслеживать свои привычки и многое другое.</p>
+    <div class="text-center">
+        <a href="{% url 'accounts:login' %}" class="btn btn-primary btn-lg">Войти</a>
+        <a href="{% url 'accounts:register' %}" class="btn btn-secondary btn-lg">Зарегистрироваться</a>
+    </div>
+</div>
+{% endblock %}

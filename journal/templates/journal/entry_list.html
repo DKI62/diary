@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="display-4 text-center mb-4">Мои записи</h2>
+    <form method="GET" action="{% url 'journal:search_entries' %}" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="q" value="{{ query }}" class="form-control form-control-lg" placeholder="Поиск по заголовку">
+            <button class="btn btn-primary btn-lg" type="submit">Поиск</button>
+        </div>
+    </form>
+
+    <a href="{% url 'journal:create_entry' %}" class="btn btn-success btn-lg mb-4">Добавить запись</a>
+    <div class="list-group">
+        {% for entry in entries %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'journal:entry_detail' entry.pk %}" class="text-decoration-none">
+                    <h5>{{ entry.title }}</h5>
+                </a>
+                <div>
+                    <a href="{% url 'journal:edit_entry' entry.pk %}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Редактировать</a>
+                    <a href="{% url 'journal:delete_entry' entry.pk %}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Удалить</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

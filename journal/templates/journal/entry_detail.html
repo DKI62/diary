@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="bg-light p-4 rounded mb-4">
+        <h3>{{ entry.title }}</h3>
+        <p>{{ entry.content }}</p>
+        <a href="{% url 'journal:entry_list' %}" class="btn btn-secondary">Назад к записям</a>
+        <a href="{% url 'journal:edit_entry' entry.pk %}" class="btn btn-warning"><i class="bi bi-pencil"></i> Редактировать</a>
+        <a href="{% url 'journal:delete_entry' entry.pk %}" class="btn btn-danger"><i class="bi bi-trash"></i> Удалить</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Вы уверены, что хотите удалить запись "{{ entry.title }}"?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Удалить</button>
+</form>
+<a href="{% url 'journal:entry_list' %}" class="btn btn-secondary">Отмена</a>
+{% endblock %}
