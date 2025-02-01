@@ -12,6 +12,10 @@ nav {
     padding: 1rem 2rem;
 }
 
+.navbar-nav .nav-item i {
+    margin-right: 8px;
+}
+
 nav .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
@@ -63,6 +67,30 @@ nav .nav-link:hover {
     border-color: #0056b3;
     box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
 }
+/* Плавные стили для формы */
+form {
+    background-color: #f8f9fa;  /* Светлый фон формы */
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Пластичные стили для полей ввода */
+input, textarea {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+}
+
+input:focus, textarea:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
 
 /* Стили для карточек */
 .list-group-item {
@@ -83,6 +111,19 @@ h2, h3 {
     color: #111;
     font-weight: 600;
     margin-bottom: 1rem;
+}
+/* Кастомный стиль для иконки пользователя */
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 /* Адаптивность */

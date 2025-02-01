@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Мой профиль</h2>
+    <div class="card mt-3 p-3">
+        <!-- Форма редактирования профиля -->
+        <form method="POST">
+            {% csrf_token %}
+            {{ profile_form.as_p }}
+            <button type="submit" name="update_profile" class="btn btn-primary">Сохранить изменения</button>
+        </form>
+
+        <h3>Изменить пароль</h3>
+        <!-- Кнопка для показа формы изменения пароля -->
+        <button type="button" class="btn btn-secondary" id="togglePasswordForm">Изменить пароль</button>
+
+        <!-- Форма для изменения пароля (по умолчанию скрыта) -->
+        <div id="passwordForm" style="display:none;">
+            <form method="POST">
+                {% csrf_token %}
+                {{ password_form.as_p }}
+                <button type="submit" name="change_password" class="btn btn-danger">Изменить пароль</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Получаем кнопку и форму изменения пароля
+    const toggleButton = document.getElementById('togglePasswordForm');
+    const passwordForm = document.getElementById('passwordForm');
+
+    // Добавляем обработчик событий на кнопку
+    toggleButton.addEventListener('click', function() {
+        // Переключаем видимость формы
+        if (passwordForm.style.display === 'none') {
+            passwordForm.style.display = 'block'; // Показываем форму
+        } else {
+            passwordForm.style.display = 'none'; // Скрываем форму
+        }
+    });
+</script>
+
+{% endblock %}

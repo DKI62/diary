@@ -21,11 +21,17 @@
     SECRET_KEY=
     
     #db
-    POSTGRES_DB=
-    POSTGRES_USER=
-    POSTGRES_PASSWORD=
-    POSTGRES_HOST=
-    POSTGRES_PORT=
+   POSTGRES_DB=
+   POSTGRES_USER=
+   POSTGRES_PASSWORD=
+   POSTGRES_HOST=
+   POSTGRES_PORT=
+
+   # Почта
+   EMAIL_HOST=
+   EMAIL_PORT=
+   EMAIL_HOST_USER=
+   EMAIL_HOST_PASSWORD=
     ```
 
 4. Запустить Docker контейнеры:
@@ -48,3 +54,14 @@
 
 ```bash
 docker-compose down
+```
+
+## Основные моменты структуры:
+
+- **accounts/** — приложение для управления пользователями, включает регистрацию, аутентификацию, профиль и восстановление пароля.
+- **journal/** — приложение для создания и управления записями дневника, включая все CRUD операции и поиск.
+- **config/** — содержит основную конфигурацию Django проекта, включая настройки и маршруты.
+- **Docker** — настройка контейнеров для проекта с использованием Docker и docker-compose.
+- **README.md** — документация проекта, включая установку и запуск.
+- **static/** — содержит статические файлы, включая стили.
+- **templates/** — основные шаблоны для страниц и приложений.
